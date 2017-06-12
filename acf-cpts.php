@@ -13,15 +13,6 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: effigylabs
 */
 
-//if( ! class_exists( 'ACF_CPTS_Updater' ) ){
-//	include_once ( plugin_dir_path( __FILE__ ) . 'updater.php' );
-//}
-//
-//$updater = new ACF_CPTS_Updater( __FILE__ );
-//$updater->set_username( 'effigy11' );
-//$updater->set_repository( 'acf-cpts-plugin' );
-//$updater->initialize();
-
 
 if( function_exists('acf_add_options_page') ) {
 	
