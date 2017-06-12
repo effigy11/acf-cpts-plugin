@@ -4,7 +4,7 @@
 Plugin Name: ACF Custom Post Types
 Plugin URI:  https://github.com/effigy11/acf-cpts-plugin
 Description: Create and manage custom post types - Requires Advanced Custom Fields Plugin
-Version:     1.0.0
+Version:     1.0.2
 Author:      EffigyLabs
 Author URI:  http://effigy.com.au
 License:     GPL2
@@ -25,9 +25,7 @@ $updater->authorize( 'c4c5aa08d9da88d7beed5a17f81406ecaf1032f5e' ); // Your auth
 $updater->initialize();
 
 
-if( class_exists('acf') ) {
- 
- 	// If ACF is Installed then run this 
+
 
 	if( function_exists('acf_add_options_page') ) {
 		
@@ -323,11 +321,5 @@ if( class_exists('acf') ) {
 	));
 	
 	endif;
-
-} else {
-
-	echo "The ACF Custom Post Types Plugin required ACF PRO to be installed";
-	
-}
 
 ?>
