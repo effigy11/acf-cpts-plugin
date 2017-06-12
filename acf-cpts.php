@@ -4,7 +4,7 @@
 Plugin Name: Advanced Custom Fields: Custom Post Types
 Plugin URI:  https://github.com/effigy11/acf-cpts-plugin
 Description: Create and manage custom post types - Requires Advanced Custom Fields Plugin
-Version:     1.0.7
+Version:     1.0.6
 Author:      EffigyLabs
 Author URI:  http://effigy.com.au
 License:     GPL2
@@ -287,7 +287,30 @@ acf_add_local_field_group(array (
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array (
-						'width' => 50,
+						'width' => 25,
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array (
+						'category' => 'Categories',
+						'post_tag' => 'Tags',
+					),
+					'default_value' => array (
+					),
+					'layout' => 'horizontal',
+					'toggle' => 0,
+					'return_format' => 'value',
+				),
+				array (
+					'key' => 'field_568f2ecef2474b',
+					'label' => 'Standard Taxonomies',
+					'name' => 'standard_taxonomies',
+					'type' => 'checkbox',
+					'instructions' => '(Optional) Whether to use the standard category taxonomy or tags for this CPT.',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => 25,
 						'class' => '',
 						'id' => '',
 					),

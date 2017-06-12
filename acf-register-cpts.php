@@ -53,19 +53,13 @@ function create_acf_cpt() {
 	            $hasArchive = false;
 	          }
 	          
-          register_post_type( 	$cptSlug ,
-        					    array(
-        					      'labels' => $labels,
-        					      'public' => $public,
-        					      'supports' => $supports,
-        					      'hierarchical' => $hierarchical,
-        					      'rewrite' => array( 'slug' => $cptSlug ),
-        					      'has_archive' => $hasArchive,
-        					      'exclude_from_search' => $excludeSearch,
-        					      'menu_icon' => $dashIcon,
-        					      'menu_position' => $menu_position // Position CPT Below Pages
-        					    )
-          );
+                    
+          // CHECK IF This CPT has Category and/or Tags checks
+          $standardTaxonomies = get_sub_field('standard_taxonomies');
+          if( in_array('category', (array) $standardTaxonomies ) ) {
+          	$standardCat = 'category';
+          }
+          
           
           // CHECK IF This CPT has Category and/or Tags checks
           $customTaxonomies = get_sub_field('custom_taxonomies');
@@ -75,6 +69,22 @@ function create_acf_cpt() {
           if( in_array('post_tag', (array) $customTaxonomies) ) {
           	create_acf_tags( $cptSlug );
           }
+          
+          register_post_type( 	$cptSlug ,
+          					    array(
+          					      'labels' => $labels,
+          					      'public' => $public,
+          					      'supports' => $supports,
+          					      'hierarchical' => $hierarchical,
+          					      'rewrite' => array( 'slug' => $cptSlug ),
+          					      'has_archive' => $hasArchive,
+          					      'exclude_from_search' => $excludeSearch,
+          					      'menu_icon' => $dashIcon,
+          					      'menu_position' => $menu_position, // Position CPT Below Pages
+          					      'taxonomies'   => array($standardCat)
+          					    )
+          );
+          
 
      endwhile;
     }
@@ -143,6 +153,8 @@ function create_acf_tags( $cptSlug ) {
 		'update_count_callback' => '_update_post_term_count',
 		'query_var'             => true,
 		'rewrite'               => array( 'slug' => $cptSlug.'_tags' ),
+		
+		
 	);
 
 	register_taxonomy( $cptSlug.'_tags', $cptSlug , $args );
