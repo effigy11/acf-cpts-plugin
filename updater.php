@@ -55,6 +55,8 @@ class ACF_CPTS_Updater {
 	        }
 
 	        $this->github_response = $response; // Set it to our property
+	        
+	        var_dump($response);
 	    }
 	}
 
