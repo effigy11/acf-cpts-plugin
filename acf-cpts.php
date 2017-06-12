@@ -2,9 +2,9 @@
 
 /*
 Plugin Name: ACF Custom Post Types
-// Plugin URI:  http://URI_Of_Page_Describing_Plugin_and_Updates // @Todo
+Plugin URI:  https://github.com/effigy11/acf-cpts-plugin
 Description: Create and manage custom post types - Requires Advanced Custom Fields Plugin
-Version:     1.0
+Version:     1.0.0
 Author:      EffigyLabs
 Author URI:  http://effigy.com.au
 License:     GPL2
@@ -17,10 +17,10 @@ if( ! class_exists( 'ACF_CPTS_Updater' ) ){
 }
 
 $updater = new ACF_CPTS_Updater( __FILE__ );
-$updater->set_username( 'rayman813' );
-$updater->set_repository( 'smashing-updater-plugin' );
+$updater->set_username( 'effigy11' );
+$updater->set_repository( 'acf-cpts-plugin' );
 /*
-	$updater->authorize( 'abcdefghijk1234567890' ); // Your auth code goes here for private repos
+$updater->authorize( 'c4c5aa08d9da88d7beed5a17f81406ecaf1032f5e' ); // Your auth code goes here for private repos
 */
 $updater->initialize();
 
