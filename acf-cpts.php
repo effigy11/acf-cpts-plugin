@@ -4,7 +4,7 @@
 Plugin Name: Advanced Custom Fields: Custom Post Types
 Plugin URI:  https://github.com/effigy11/acf-cpts-plugin
 Description: Create and manage custom post types - Requires Advanced Custom Fields Plugin
-Version:     1.0.6
+Version:     1.0.8
 Author:      EffigyLabs
 Author URI:  http://effigy.com.au
 License:     GPL2
