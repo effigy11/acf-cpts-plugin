@@ -2,8 +2,8 @@
 
 if( have_rows('custom_post_types', 'option') ): 
 
-add_action( 'init', 'create_acf_cpt' );
-function create_acf_cpt() {
+add_action( 'init', 'efflab_create_acf_cpt' );
+function efflab_create_acf_cpt() {
 
     while( have_rows('custom_post_types', 'option') ): the_row(); 
     
